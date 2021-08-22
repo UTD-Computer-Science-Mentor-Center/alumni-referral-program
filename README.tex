@@ -1,9 +1,7 @@
 \documentclass[letterpaper, 12pt]{article}
 % \setlength{\parindent}{30pt}
-\usepackage{ifthen}
 \usepackage{ifluatex}
 \usepackage{ifpdf}
-\usepackage{float}
 \usepackage[T1]{fontenc}
 \usepackage[margin=1in]{geometry} % Page Margins
 % \usepackage{bookmark}
@@ -30,12 +28,10 @@
 % Configure Ordered Lists
 \usepackage{enumitem}
 \setlist[enumerate]{nosep,
-    % label=\arabic*),
+    label=\arabic*\char41,
     leftmargin=*,
     labelindent=\parindent,
 }
-
-\usepackage{setspace}
 
 % \usepackage{titlesec}
 % \titleformat{\section}
@@ -54,9 +50,9 @@
 
 \newcommand{\minSemesters}{3}
 \newcommand{\currentBoss}{Jason Smith}
-\newcommand{\QA}[2]{\textit{#1}
+\newcommand{\QA}[2]{\textit{#1}\medskip
 
-    \begin{doublespace}#2\end{doublespace}
+    #2\bigskip
 }
 \newcommand{\note}[1]{\textbf{Note:}~#1}
 
@@ -66,23 +62,39 @@
     \bfseries\Large CSMC Alumni Referral Program
 \end{center}
 
-\doublespacing{}
-
 \section{Disclaimer}\label{section:disclaimer}
 
-You are not guaranteed an interview let alone a job offer. At the bear minimum,
-you are only guaranteed 1 person looking at your resume.
+You are not guaranteed an interview let alone a job offer. At the bare minimum,
+you are guaranteed to have at least one person looking at your resume.
 
 If at any point you provide your contact information outside the confines of
 this program, you are responsible for any messages and/or spam you
 receive.\label{section:disclaimer:spamMessages}
 
+\section{Problem Statement}
+
+It was commonplace for fellow CSMC mentors to give referrals to other mentors.
+As mentors come and go, this positive feedback loop stays.
+
+The global pandemic changed everything. The cycle halted. Many lost internship
+opportunities. May the odds be ever in your favor to find a full time job out of
+college.
+
+\section{Mission Statement}
+
+This program is one answer that seeks to provide a semi-established channel for
+(current and even former) CSMC mentors find internships and their first job after
+graduating.
+
+While it may seem like a temporarily solution to a bigger problem, it is still
+walking towards a more permanent, establish path.
+
 \section{Participation Requirements}
 
 \subsection{Requester}
 
-\currentBoss{} asked to set the minimum number of semesters worked at the
-CSMC to be eligible for the program at \minSemesters{} semesters.
+\currentBoss{} wants a minimum of \minSemesters{} semesters  worked at the CSMC
+to be eligible for the program.
 
 \subsection{Referrer}
 
@@ -95,18 +107,50 @@ likely call ``guidelines'' than actual rules.
 
 \subsection{Requester}
 
-At some point \currentBoss{} should have posted Pratik Bhusal's referral request form. Assuming you are eligible, please fill that form
-out to show your interest in the program.
+At some point \currentBoss{} should have posted Pratik Bhusal's referral request
+form. Assuming you are eligible, please fill that form out to show your interest
+in the program.
 
 \subsection{Referrer}
 
-Notify Pratik Bhusal know that you no longer want to give referrals.
+If you no longer want to give referrals, notify Pratik Bhusal.
 
 \note{%
     As mentioned in the \hyperref[section:disclaimer:spamMessages]{disclaimer},
     if you provide your contact information to a requester, you are responsible
     for any communication that does not go through this program.
 }
+
+\section{Potential/Frequently Asked Questions}
+
+\begin{enumerate}
+    \item\QA%
+        {When is the best time to apply/participate?}
+        {As early as possible.}
+    \item\QA%
+        {%
+            Why can't you just post all the referrers' contact information in
+            the primary method of communication used by the CSMC (e.g: Slack)?
+        }
+        {%
+            The referrer has only guaranteed sharing contact information with
+            Pratik Bhusal. Them receiving unsolicited spam from a random
+            individual should never happen.
+        }
+    \item\QA%
+        {%
+            What benefit(s) do referrers get?
+        }
+        {%
+            They provide referrals for any combination of reasons. It could be
+            because they want to help their former coworkers, there is some
+            financial incentive, or both.
+
+            In the case of a financial incentive, companies \textit{may} provide
+            a financial incentive to employees for successful candidate hirings.
+        }
+\end{enumerate}
+
 
 \section{Referral Request Process Diagram}
 
@@ -123,23 +167,5 @@ Notify Pratik Bhusal know that you no longer want to give referrals.
     In the situation that a company on that list has multiple potential
     referrers, one will be randomly picked.
 }
-
-\section{Potential/Frequently Asked Questions}
-
-\begin{enumerate}
-    \item\QA%
-        {When is the best time to apply/participate?}
-        {As early as possible.}
-    \item\QA%
-        {%
-            Why can't you just post all the referrers' contact information in the
-            primary method of communication used by the CSMC (e.g: Slack)?
-        }
-        {%
-            The referrer has only guaranteed sharing contact information with
-            Pratik Bhusal. Them receiving unsolicited spam from a random
-            individual should never happen.
-        }
-\end{enumerate}
 
 \end{document}
