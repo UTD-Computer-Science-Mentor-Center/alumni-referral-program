@@ -29,8 +29,6 @@
 \usepackage{enumitem}
 \setlist[enumerate]{nosep,
     label=\arabic*\char41,
-    leftmargin=*,
-    labelindent=\parindent,
 }
 
 % \usepackage{titlesec}
@@ -56,6 +54,13 @@
     #2\bigskip
 }
 \newcommand{\note}[1]{\textbf{Note:}~#1}
+
+\newlist{simpleList}{description}{2}
+\setlist[simpleList]{leftmargin=!}
+\newcommand{\requesterCondition}[2]{\begin{simpleList}[labelwidth=19ex]
+        \item[#1]#2
+    \end{simpleList}
+}
 
 \begin{document}
 
@@ -95,10 +100,21 @@ walking towards a more permanent, establish path.
 
 \subsection{Requester}
 
-For mentors currently employed at the CSMC, \currentBoss{} wants a minimum of
-\bossMinSemesters{} semesters worked at the CSMC to be eligible for the program.
+You are eligible to request referrals if and only if you meet at least one of
+the following classifications:
 
-If you have graduated, Pratik Bhusal requires \pratikMinSemesters{} semesters.
+\begin{enumerate}
+    \item\requesterCondition{Current Student}{You are a student at UTD\@. You
+        have started at least semester \bossMinSemesters{} at the CSMC.
+    }
+    \item\requesterCondition{Senior Student}{You are a student at UTD\@. You are
+        in/starting your last year before graduating. You have worked at least
+        \pratikMinSemesters{} complete semesters at the CSMC.
+    }
+    \item\requesterCondition{Alum}{You have graduated from UTD\@. You have
+        worked at least \pratikMinSemesters{} complete semesters at the CSMC.
+    }
+\end{enumerate}
 
 \subsection{Referrer}
 
@@ -131,7 +147,7 @@ If you no longer wish to participate, please let Pratik Bhusal know.
 
 \section{Potential/Frequently Asked Questions}
 
-\begin{enumerate}
+\begin{enumerate}[leftmargin=*]
     \item\QA%
         {When is the best time to apply/participate?}
         {As early as possible.}
@@ -144,6 +160,18 @@ If you no longer wish to participate, please let Pratik Bhusal know.
             The referrer has only guaranteed sharing contact information with
             Pratik Bhusal. Them receiving unsolicited spam from a random
             individual should never happen.
+        }
+    \item\QA%
+        {%
+            If I am a student at UTD and just finished my second semester
+            working at the CSMC, am I eligible to participate?
+        }
+        {%
+            If you are in your last semester/year before graduating UTD, you are
+            classified as a senior student and hence eligible.
+
+            If you are \textbf{not} in your last semester/year before graduating
+            UTD, you are \textbf{not} eligible.
         }
     \item\QA%
         {%

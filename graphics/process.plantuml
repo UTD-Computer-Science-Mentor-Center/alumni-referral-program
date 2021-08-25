@@ -9,12 +9,12 @@ actor "Requester" as requester
 actor "Pratik Bhusal" as pratik
 actor "Referrer" as referrer
 
-pratik -> boss: Send list of companies
+pratik -> boss: Send requester form
 activate boss
 
-boss -> pratik: Send list of eligible mentors
+boss -> requester: Notify form existance
 
-boss --> boss: Post form to main\ncommunication\nservice of choice
+boss -> pratik: Send list of eligible mentors
 
 deactivate boss
 
@@ -25,20 +25,19 @@ requester -> pratik: Send resume\nand list of companies to request referrals
 pratik -> pratik: Check if requester is eligible
 
 
-alt if Requester is eligible
-        requester <- pratik: Notify them that they are eligble\nand that they will send\nreferral request.
+group if [Requester eligible]
+    requester <-- pratik: Notify that they are eligble\nand that they will send\nreferral request.
 
     ...Wait for Pratik actually having free time...
 
-    loop for each company referral request
+    group for each [company referral request]
                 pratik -> referrer: Send referral request
         activate referrer
 
         ...Wait for Referrer to look at request...
-
-        alt if Referrer wants to give referral to Requester
-                alt if Referrer wants to directly talk with Requester
-                requester <-- referrer: Notify about how to finalize the company specific referral process
+        group if [Referrer wants to give referral to Requester]
+            group if [Referrer wants to directly talk with Requester]
+                requester <-- referrer: Notify final referral steps
             else otherwise
                 pratik <-- referrer: Request Pratik to send final referral steps
                 deactivate referrer
