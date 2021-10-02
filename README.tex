@@ -93,7 +93,7 @@ walking towards a more permanent, established path.
 \subsection{Requester}
 
 You are eligible to request referrals if and only if you have worked at least
-\minSemesters{} semseters at the CSMC.
+\minSemesters{} semesters at the CSMC.
 
 \subsection{Referrer}
 
@@ -149,7 +149,8 @@ If you no longer wish to participate, please let Pratik Bhusal know.
         {%
             They provide referrals for any combination of reasons. It could be
             because they want to help their former coworkers, there is some
-            financial incentive, or both.
+            financial incentive, all of the above reasons, or some other reason
+            entirely.
 
             In the case of a financial incentive, companies \textit{may} provide
             a financial incentive to employees for successful candidate hirings.
@@ -160,12 +161,27 @@ If you no longer wish to participate, please let Pratik Bhusal know.
             It is stored on Google spreadsheets. Automatic data encryption is
             desired, but still in the brainstorming phase.
         }
+    \item\QA%
+        {What is the easiest way to contact Pratik Bhusal about the program?}
+        {%
+            There are two ways:
+
+            \begin{enumerate}
+                \item Create a new issue on the git repository associated with
+                    the program.
+                \item Send an email associated with this
+                    program.\\\textbf{Hint:} repository-name (at) fullname (dot) com
+
+            \end{enumerate}
+        }
 \end{enumerate}
 
 
 \section{Referral Request Process Diagram}
 
-\includesvg[inkscapelatex=false,width=\linewidth]{./graphics/process}\label{fig:requestProcess}
+\subsection{Requester to Referrer}
+
+\includesvg[inkscapelatex=false,width=\linewidth]{./graphics/requester_to_referrer}\label{fig:requesterToReferrer}
 
 \note{%
     Special conditions may exist based on the referrer's preferences and/or
@@ -178,5 +194,12 @@ If you no longer wish to participate, please let Pratik Bhusal know.
     In the situation that a company on that list has multiple potential
     referrers, one will be randomly picked.
 }
+
+\subsection{Referrer to Requester }
+
+\includesvg[inkscapelatex=false,width=\linewidth]{./graphics/referrer_to_requester}\label{fig:referrerToRequester}
+
+
+\note{This assumes that the referrer wants to give a referral to the requester.}
 
 \end{document}

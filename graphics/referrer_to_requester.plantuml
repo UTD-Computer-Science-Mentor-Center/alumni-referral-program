@@ -1,0 +1,18 @@
+@startuml
+' Basic Configuration
+skinparam monochrome true
+skinparam shadowing false
+autonumber 8
+
+actor "Requester" as requester
+actor "Pratik Bhusal" as pratik
+actor "Referrer" as referrer
+
+group if [Referrer wants to directly talk with Requester]
+    requester <-- referrer: Notify final referral steps
+else otherwise
+    pratik <-- referrer: Request Pratik to send final referral steps
+    requester <-- pratik: Notify final referral steps
+end
+
+@enduml

@@ -30,21 +30,7 @@ group if [Requester eligible]
 
     ...Wait for Pratik actually having free time...
 
-    group for each [company referral request]
-                pratik -> referrer: Send referral request
-        activate referrer
-
-        ...Wait for Referrer to look at request...
-        group if [Referrer wants to give referral to Requester]
-            group if [Referrer wants to directly talk with Requester]
-                requester <-- referrer: Notify final referral steps
-            else otherwise
-                pratik <-- referrer: Request Pratik to send final referral steps
-                deactivate referrer
-                requester <-- pratik: Notify final referral steps
-            end
-        end
-    end
+    pratik -> referrer: Send referral requests
 end
 
 @enduml
