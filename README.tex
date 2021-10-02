@@ -46,21 +46,13 @@
 
 \pagestyle{empty} % Remove Page Numbers
 
-\newcommand{\pratikMinSemesters}{2}
-\newcommand{\bossMinSemesters}{3}
+\newcommand{\minSemesters}{2}
 \newcommand{\currentBoss}{Jason Smith}
 \newcommand{\QA}[2]{\textit{#1}\medskip
 
     #2\bigskip
 }
 \newcommand{\note}[1]{\textbf{Note:}~#1}
-
-\newlist{simpleList}{description}{2}
-\setlist[simpleList]{leftmargin=!}
-\newcommand{\requesterCondition}[2]{\begin{simpleList}[labelwidth=19ex]
-        \item[#1]#2
-    \end{simpleList}
-}
 
 \begin{document}
 
@@ -94,27 +86,14 @@ This program is one answer that seeks to provide a semi-established channel for
 graduating.
 
 While it may seem like a temporarily solution to a bigger problem, it is still
-walking towards a more permanent, establish path.
+walking towards a more permanent, established path.
 
 \section{Participation Requirements}
 
 \subsection{Requester}
 
-You are eligible to request referrals if and only if you meet at least one of
-the following classifications:
-
-\begin{enumerate}
-    \item\requesterCondition{Current Student}{You are a student at UTD\@. You
-        have started at least semester \bossMinSemesters{} at the CSMC.
-    }
-    \item\requesterCondition{Senior Student}{You are a student at UTD\@. You are
-        in/starting your last year before graduating. You have worked at least
-        \pratikMinSemesters{} complete semesters at the CSMC.
-    }
-    \item\requesterCondition{Alum}{You have graduated from UTD\@. You have
-        worked at least \pratikMinSemesters{} complete semesters at the CSMC.
-    }
-\end{enumerate}
+You are eligible to request referrals if and only if you have worked at least
+\minSemesters{} semseters at the CSMC.
 
 \subsection{Referrer}
 
@@ -165,18 +144,6 @@ If you no longer wish to participate, please let Pratik Bhusal know.
         }
     \item\QA%
         {%
-            If I am a student at UTD and just finished my second semester
-            working at the CSMC, am I eligible to participate?
-        }
-        {%
-            If you are in your last semester/year before graduating UTD, you are
-            classified as a senior student and hence eligible.
-
-            If you are \textbf{not} in your last semester/year before graduating
-            UTD, you are \textbf{not} eligible.
-        }
-    \item\QA%
-        {%
             What benefit(s) do referrers get?
         }
         {%
@@ -189,7 +156,7 @@ If you no longer wish to participate, please let Pratik Bhusal know.
         }
     \item\QA%
         {How is my information stored?}
-        {
+        {%
             It is stored on Google spreadsheets. Automatic data encryption is
             desired, but still in the brainstorming phase.
         }
